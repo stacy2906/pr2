@@ -25,11 +25,17 @@ namespace ConsoleApp5
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Введимте название");
+                Console.WriteLine("Введите название");
                 string s = Console.ReadLine();
                 switch(s)
                 {
                      case "Абитуриент":people.Add(Applicant.Input());
+                        break;
+                    case "Студент":
+                        people.Add(Student.Input());
+                        break;
+                    case "Учитель":
+                        people.Add(Teacher.Input());
                         break;
                 }
 
@@ -37,42 +43,29 @@ namespace ConsoleApp5
                 {
                     elem.Info();
                 }
-
-                Console.WriteLine("Введите название");
-                string d = Console.ReadLine();
-                switch (d)
-                {
-                    case "Студент":
-                        people.Add(Student.Input());
-                        break;
-                }
-
-               
-
-                Console.WriteLine("введите название");
-                string f = Console.ReadLine();
-                switch (f)
-                {
-                    case "Учитель":
-                        people.Add(Teacher.Input());
-                        break;
-                }
-
-             
+              
             }
 
 
-            int minAge = 20;
-            int maxAge = 30;
+            Console.Write("Введите нижнюю границу");
+            int minAge = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите верхнюю границу");
+            int maxAge = Convert.ToInt32(Console.ReadLine());;
 
             Console.WriteLine($"\nPeople aged between {minAge} and {maxAge} years:");
-            foreach (Person person in people)
+            for(int i=0, i<person.Count, i++)
             {
-                if (person.Age() >= minAge && person.Age() <= maxAge)
+                 if (person{i}, Age() >= minAge && list{i} Age() <= maxAge)
                 {
                     person.Info();
                 }
-            }
+            //foreach (Person person in people)
+           // {
+             //   if (person.Age() >= minAge && person.Age() <= maxAge)
+             //   {
+              //      person.Info();
+              //  }
+           // }
 
             Console.ReadKey();
         }
